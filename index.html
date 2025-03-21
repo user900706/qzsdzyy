@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <script>
-        function redirect() {
-            const ua = navigator.userAgent;
-            let targetUrl = 'https://ih.qzdyyy.com/a/?h=qzdyyy&action=script&code=chs';
-
-            if (ua.match(/MicroMessenger/i)) {
-                targetUrl = 'https://ih.qzdyyy.com/weixin/minih5/chs/pages/list';
-            } else if (ua.match(/AlipayClient/i)) {
-                targetUrl = 'https://qr.alipay.com/0uc17279d0jdlnjhsx0lr43';
-            }
-            window.location.href = targetUrl;
-        }
-    </script>
+    <meta charset="utf-8">
+    <!-- 自动跳转到你的官网 -->
+    <meta http-equiv="refresh" content="0; url=https://your-official-website.com">
+    <title>Redirecting...</title>
 </head>
-<body onload="redirect()">
-    <p>自动跳转中，若未响应，请 <button onclick="redirect()">点击此处</button></p >
+<body>
+    <p>正在跳转至官网... <a href="https://your-official-website.com">立即访问</a></p>
 </body>
 </html>
