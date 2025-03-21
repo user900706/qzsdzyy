@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <script>
+        // 支付宝User Agent包含'Alipay'，微信包含'MicroMessenger'
+        const userAgent = navigator.userAgent.toLowerCase();
+        if (userAgent.includes('alipay')) {
+            window.location.replace('https://地址1.com'); // 支付宝跳转地址
+        } else if (userAgent.includes('micromessenger')) {
+            window.location.replace('https://地址2.com'); // 微信跳转地址
+        } else {
+            document.write('请使用支付宝或微信扫码');
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
