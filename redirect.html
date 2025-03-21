@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta charset="UTF-8">
     <script>
-        // 支付宝User Agent包含'Alipay'，微信包含'MicroMessenger'
-        const userAgent = navigator.userAgent.toLowerCase();
-        if (userAgent.includes('alipay')) {
-            window.location.replace('https://qr.alipay.com/0uc17279d0jdlnjhsx0lr43'); // 支付宝跳转地址
-        } else if (userAgent.includes('micromessenger')) {
-            window.location.replace('https://ih.qzdyyy.com/weixin/minih5/chs/pages/list'); // 微信跳转地址
-        } else {
-            window.location.replace('https://ih.qzdyyy.com/a/?h=qzdyyy&action=script&code=chs'); // 微信+支付宝跳转地址
+        function redirect() {
+            const ua = navigator.userAgent;
+            let targetUrl = 'https://ih.qzdyyy.com/a/?h=qzdyyy&action=script&code=chs';
+
+            if (ua.match(/MicroMessenger/i)) {
+                targetUrl = 'https://ih.qzdyyy.com/weixin/minih5/chs/pages/list';
+            } else if (ua.match(/AlipayClient/i)) {
+                targetUrl = 'https://qr.alipay.com/0uc17279d0jdlnjhsx0lr43';
+            }
+            window.location.href = targetUrl;
         }
     </script>
 </head>
-<body>
+<body onload="redirect()">
+    <p>自动跳转中，若未响应，请 <button onclick="redirect()">点击此处</button></p >
 </body>
 </html>
